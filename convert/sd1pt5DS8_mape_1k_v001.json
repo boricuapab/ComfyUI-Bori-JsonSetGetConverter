@@ -1,0 +1,1569 @@
+{
+  "id": "8336ed00-0b7d-4b0e-805a-ea7183c5e78e",
+  "revision": 0,
+  "last_node_id": 33,
+  "last_link_id": 27,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "VAEDecode",
+      "pos": [
+        3788.82421875,
+        989.2601928710938
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 1
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            2,
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 4,
+      "type": "PreviewImage",
+      "pos": [
+        4028.82421875,
+        989.2601928710938
+      ],
+      "size": [
+        312.0595703125,
+        262.9342956542969
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2
+        }
+      ],
+      "outputs": [],
+      "title": "sd1pt5DS7PreviewImg",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 5,
+      "type": "SaveImage",
+      "pos": [
+        3788.82421875,
+        1309.2601318359375
+      ],
+      "size": [
+        655.3082275390625,
+        587.4202880859375
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 3
+        }
+      ],
+      "outputs": [],
+      "title": "sd1pt5DS7SaveImg",
+      "properties": {},
+      "widgets_values": [
+        "sd1pt5DS8"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 6,
+      "type": "VAEDecode",
+      "pos": [
+        5217.68212890625,
+        1047.4886474609375
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 4
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            5,
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 7,
+      "type": "PreviewImage",
+      "pos": [
+        5467.68212890625,
+        1047.4886474609375
+      ],
+      "size": [
+        312.0595703125,
+        262.9342956542969
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 5
+        }
+      ],
+      "outputs": [],
+      "title": "sd1pt5DS7PreviewImg",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 8,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        3438.824462890625,
+        889.2601928710938
+      ],
+      "size": [
+        315,
+        334
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 10
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 16
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 19
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            1,
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced"
+      },
+      "widgets_values": [
+        "enable",
+        64002887610064,
+        "fixed",
+        30,
+        8,
+        "dpmpp_2m_sde_gpu",
+        "karras",
+        0,
+        30,
+        "enable"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        4847.68212890625,
+        917.4886474609375
+      ],
+      "size": [
+        315,
+        334
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 11
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 17
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 20
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 27
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced"
+      },
+      "widgets_values": [
+        "enable",
+        717402241695705,
+        "fixed",
+        30,
+        8,
+        "dpmpp_2m_sde_gpu",
+        "karras",
+        13,
+        10000,
+        "disable"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "SaveImage",
+      "pos": [
+        5191.25146484375,
+        1373.201416015625
+      ],
+      "size": [
+        655.3082275390625,
+        587.4202880859375
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8
+        }
+      ],
+      "outputs": [],
+      "title": "sd1pt5DS7SaveImg",
+      "properties": {},
+      "widgets_values": [
+        "sd1pt5DS8_2xScl"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 15,
+      "type": "mape Variable",
+      "pos": [
+        2390.372802734375,
+        739.3497314453125
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "mdl_mv"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "mape Variable",
+      "pos": [
+        3112.580810546875,
+        746.7756958007812
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "mdl_mv"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "mape Variable",
+      "pos": [
+        4531.1357421875,
+        760.1641845703125
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "mdl_mv"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "CLIPSetLastLayer",
+      "pos": [
+        2387.682373046875,
+        867.4886474609375
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 0,
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPSetLastLayer"
+      },
+      "widgets_values": [
+        -2
+      ]
+    },
+    {
+      "id": 18,
+      "type": "mape Variable",
+      "pos": [
+        2628.519287109375,
+        866.7962646484375
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "clp_mv"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "mape Variable",
+      "pos": [
+        2022.519287109375,
+        1145.7962646484375
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "clp_mv"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "mape Variable",
+      "pos": [
+        2025.519287109375,
+        1419.7962646484375
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "clp_mv"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2317.682373046875,
+        1147.4886474609375
+      ],
+      "size": [
+        392.8513488769531,
+        219.756103515625
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            15
+          ]
+        }
+      ],
+      "title": "PositivePrompt",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "masterpiece, extremely intricate, full body shot chubby fox, army clothes, looking at viewer, white background, \n\ndeviantart, artstation, concept art, award winning photography, margins, professional oil painting by Ed Blinkey, Atey Ghailan, Jeremy Mann, Greg Manchess, Alex Gray, trending on ArtStation, trending on CGSociety, \n\nintricate, high detail, sharp focus, dramatic, matte drawing, cinematic lighting, octane render, unreal engine, volumetrics, rtx"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 21,
+      "type": "mape Variable",
+      "pos": [
+        2735.519287109375,
+        1146.7962646484375
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "condPos_mv"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "mape Variable",
+      "pos": [
+        3115.519287109375,
+        876.7962646484375
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "condPos_mv"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2317.682373046875,
+        1417.4886474609375
+      ],
+      "size": [
+        393.4173278808594,
+        88
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            18
+          ]
+        }
+      ],
+      "title": "NegativePrompt",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "girl, human, text, watermark,"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 24,
+      "type": "mape Variable",
+      "pos": [
+        2738.377685546875,
+        1418.1251220703125
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "condNeg_mv"
+      ]
+    },
+    {
+      "id": 25,
+      "type": "mape Variable",
+      "pos": [
+        3117.20361328125,
+        999.1055297851562
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "condNeg_mv"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "mape Variable",
+      "pos": [
+        4537.470703125,
+        1034.48681640625
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "condNeg_mv"
+      ]
+    },
+    {
+      "id": 23,
+      "type": "mape Variable",
+      "pos": [
+        4534.892578125,
+        902.829833984375
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "condPos_mv"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "EmptyLatentImage",
+      "pos": [
+        2397.682373046875,
+        1567.4886474609375
+      ],
+      "size": [
+        255.7100067138672,
+        106
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            21
+          ]
+        }
+      ],
+      "title": "sdlxEmptyLatentImage_1k",
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ]
+    },
+    {
+      "id": 27,
+      "type": "mape Variable",
+      "pos": [
+        2683.9091796875,
+        1567.4486083984375
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "firLtnt_mv"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "mape Variable",
+      "pos": [
+        3113.9091796875,
+        1122.4486083984375
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "firLtnt_mv"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        2037.6822509765625,
+        847.4886474609375
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            9
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": [
+            6
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            23
+          ]
+        }
+      ],
+      "title": "sd1pt5Base_ModelLoader",
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "1pt5\\dreamshaper_8.safetensors"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "mape Variable",
+      "pos": [
+        2387.948486328125,
+        991.3817749023438
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "vae_mv"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "mape Variable",
+      "pos": [
+        3469.005615234375,
+        1293.1337890625
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "vae_mv"
+      ]
+    },
+    {
+      "id": 31,
+      "type": "mape Variable",
+      "pos": [
+        4877.46435546875,
+        1318.0772705078125
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "vae_mv"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "LatentUpscale",
+      "pos": [
+        3778.82421875,
+        769.2601928710938
+      ],
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            26
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LatentUpscale"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        1024,
+        1024,
+        "disabled"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "mape Variable",
+      "pos": [
+        4120.1396484375,
+        768.0595092773438
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "ltnt1kUpscale_mv"
+      ]
+    },
+    {
+      "id": 33,
+      "type": "mape Variable",
+      "pos": [
+        4534.26953125,
+        1165.102783203125
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "*",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "mape Variable"
+      },
+      "widgets_values": [
+        "ltnt1kUpscale_mv"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      8,
+      0,
+      3,
+      0,
+      "LATENT"
+    ],
+    [
+      2,
+      3,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      3,
+      3,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      10,
+      0,
+      6,
+      0,
+      "LATENT"
+    ],
+    [
+      5,
+      6,
+      0,
+      7,
+      0,
+      "IMAGE"
+    ],
+    [
+      6,
+      1,
+      1,
+      11,
+      0,
+      "CLIP"
+    ],
+    [
+      7,
+      8,
+      0,
+      12,
+      0,
+      "LATENT"
+    ],
+    [
+      8,
+      6,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      1,
+      0,
+      15,
+      0,
+      "*"
+    ],
+    [
+      10,
+      16,
+      0,
+      8,
+      0,
+      "MODEL"
+    ],
+    [
+      11,
+      17,
+      0,
+      10,
+      0,
+      "MODEL"
+    ],
+    [
+      12,
+      11,
+      0,
+      18,
+      0,
+      "*"
+    ],
+    [
+      13,
+      19,
+      0,
+      9,
+      0,
+      "CLIP"
+    ],
+    [
+      14,
+      20,
+      0,
+      14,
+      0,
+      "CLIP"
+    ],
+    [
+      15,
+      9,
+      0,
+      21,
+      0,
+      "*"
+    ],
+    [
+      16,
+      22,
+      0,
+      8,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      17,
+      23,
+      0,
+      10,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      18,
+      14,
+      0,
+      24,
+      0,
+      "*"
+    ],
+    [
+      19,
+      25,
+      0,
+      8,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      20,
+      26,
+      0,
+      10,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      21,
+      2,
+      0,
+      27,
+      0,
+      "*"
+    ],
+    [
+      22,
+      28,
+      0,
+      8,
+      3,
+      "LATENT"
+    ],
+    [
+      23,
+      1,
+      2,
+      29,
+      0,
+      "*"
+    ],
+    [
+      24,
+      30,
+      0,
+      3,
+      1,
+      "VAE"
+    ],
+    [
+      25,
+      31,
+      0,
+      6,
+      1,
+      "VAE"
+    ],
+    [
+      26,
+      12,
+      0,
+      32,
+      0,
+      "*"
+    ],
+    [
+      27,
+      33,
+      0,
+      10,
+      3,
+      "LATENT"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "mdl_cond_ltnt_settings_grp",
+      "bounding": [
+        2006.0198974609375,
+        633.5291748046875,
+        1030.572021484375,
+        1060.947021484375
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "fir_sampler_grp",
+      "bounding": [
+        3055.629638671875,
+        636.8974609375,
+        1407.471435546875,
+        1279.8299560546875
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "fir_1k_upscaled_sampler_grp",
+      "bounding": [
+        4485.0361328125,
+        640.5296020507812,
+        1390.190673828125,
+        1346.311767578125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9090909090909091,
+      "offset": [
+        -3419.741536649592,
+        -652.2637660860184
+      ]
+    },
+    "frontendVersion": "1.21.5"
+  },
+  "version": 0.4
+}
