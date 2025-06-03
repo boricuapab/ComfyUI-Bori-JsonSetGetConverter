@@ -1,0 +1,15 @@
+[project]
+name = "bori-jsonsetgetconverter"
+description = "This is a custom node for ComfyUI that takes in a file path full of json's and finds the mape variable nodes in them and converts them to the kjnode set and get nodes."
+version = "1.0.0"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/boricuapab/ComfyUI-Bori-JsonSetGetConverter"
+#  Used by Comfy Registry https://registry.comfy.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-Bori-JsonSetGetConverter"
+Icon = ""
+includes = []
